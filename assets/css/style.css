@@ -58,7 +58,7 @@ section{padding:42px 0}section+section{border-top:1px solid var(--rule)}
 .edu-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}
 .edu .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.edu h3{font-size:19px}.edu p{margin:.3em 0}
 .courses{margin-top:10px!important;color:var(--sub);font-size:16px;line-height:1.7}.courses b{color:var(--ink)}
-.ri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.ri-grid.n3{grid-template-columns:repeat(3,1fr)}
 .ri{border:1px solid var(--rule);border-radius:var(--radius);padding:20px;background:#fff;box-shadow:var(--shadow)}
 .ri h3{font-size:17.5px;margin:0 0 10px}
 
@@ -125,4 +125,5 @@ section{padding:42px 0}section+section{border-top:1px solid var(--rule)}
 @media (max-width:1013px){.hero-main{grid-template-columns:1fr;gap:28px}.portrait{width:min(260px,72vw);margin:0 auto;order:0;align-self:auto}}
 @media (max-width:980px){.edu-grid{grid-template-columns:1fr}.ri-grid{grid-template-columns:1fr 1fr}.ptext{padding:22px 20px 4px}
   .hero h1{font-size:40px}.honor{grid-template-columns:1fr auto}.honor .hnote{grid-column:1/-1;order:3}}
+@media (max-width:760px){.ri-grid.n3{grid-template-columns:1fr}}
 @media (max-width:560px){.ri-grid,.skill{grid-template-columns:1fr}.skill{gap:8px}.wrap{padding:0 16px}.nav-links{gap:16px}.brand{display:none}.qcard{grid-template-columns:34px 1fr}.qgo{grid-column:2;justify-self:start}}
