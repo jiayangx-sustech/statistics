@@ -14,6 +14,13 @@
         panels.forEach(function (x) { x.hidden = x.getAttribute('data-i') !== i; });
       });
     });
+    // previous / next arrows: move to the neighbouring tab, wrapping around
+    $$('.tabgo', p).forEach(function (g) {
+      g.addEventListener('click', function () {
+        var cur = tabs.indexOf(p.querySelector('.tab.on')), d = +g.getAttribute('data-d');
+        tabs[(cur + d + tabs.length) % tabs.length].click();
+      });
+    });
   });
 
   // Lightbox: every figure of a project, previous / next across its tabs

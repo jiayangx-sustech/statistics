@@ -17,7 +17,7 @@ h3.sub{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:58px;gap:20px}
 .brand{font-weight:700;color:var(--ink);font-size:18px}
 .nav-links{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none}
-.nav-links a{color:var(--sub);font-size:15.5px;font-weight:600;white-space:nowrap}.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-links a{color:var(--accent-ink);font-size:15.5px;font-weight:600;white-space:nowrap}.nav-links a:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
 
 /* hero with the four project links */
 .hero{padding:40px 0 32px;background:linear-gradient(180deg,#FAFBFC 0,#fff 100%)}
@@ -65,25 +65,30 @@ section{padding:42px 0}section+section{border-top:1px solid var(--rule)}
 /* projects */
 .project:last-child{margin-bottom:0}
 .project{border:1px solid var(--rule);border-radius:var(--radius);margin-bottom:24px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
-.ptext{padding:24px 20px 4px;max-width:900px}
+.ptext{padding:24px 20px 4px}
 .ptext p,.ptext ul{max-width:46em}
 .pnum{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:6px}
-.project h3{font-size:25px;margin-bottom:8px}
+.project h3{font-size:25px;margin-bottom:8px;max-width:860px}   /* = the old 900-px text column minus padding */
 .p-meta{color:var(--sub);font-size:16px;margin-bottom:12px}
 .summary{font-size:18px;color:#323F4B}
 .points{list-style:none;padding:0;margin:8px 0 10px}
 .points li{position:relative;padding-left:22px;margin-bottom:5px;font-size:17.5px}
 .points li::before{content:"";position:absolute;left:3px;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--accent)}
-.outcome{font-size:17px}.label{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-right:6px}
+.outcome{font-size:17px}.ptext .pauthors{font-size:17px;margin-top:-.2em;max-width:none}.pauthors b{color:var(--ink)}.label{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-right:6px}
 
 /* figure tabs: every figure is shown at the same width (the figure column, max 1200 px = FIGW in build.py) */
 .figarea{border-top:1px solid var(--rule);background:#fff;padding:14px 0 20px;margin-top:12px}
 .tabbar{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:0 20px 12px}
 .tablabel{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:6px}
-.tab .tn{display:inline-block;min-width:1.4em;margin-right:6px;font-variant-numeric:tabular-nums;opacity:.65}
-.tab{all:unset;cursor:pointer;padding:8px 18px;border-radius:999px;font-size:16px;font-weight:600;color:var(--sub);border:1px solid var(--rule);background:#fff}
-.tab:hover{border-color:var(--muted)}.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.tab:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* tabs look like the orange View buttons of the hero cards: outlined = another figure to open, filled = the figure shown */
+.tab .tn{display:inline-block;min-width:1.2em;margin-right:6px;font-variant-numeric:tabular-nums}
+.tab{all:unset;cursor:pointer;padding:7.5px 17.5px;border-radius:999px;font-size:16px;font-weight:700;color:var(--accent-ink);border:1.5px solid var(--accent);
+  background:#fff;box-shadow:0 1px 2px rgba(31,41,51,.08);transition:background .2s,color .2s}
+.tab:hover{background:var(--tint)}.tab.on{background:var(--accent-ink);color:#fff;border-color:var(--accent-ink)}
+.tab:focus-visible,.tabgo:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.tabgo{all:unset;box-sizing:border-box;cursor:pointer;width:43px;height:43px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent-ink);background:#fff;
+  display:inline-flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;line-height:1;box-shadow:0 1px 2px rgba(31,41,51,.08);transition:background .2s,color .2s}
+.tabgo:hover{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff}
 .panel{display:flex;flex-direction:column;gap:10px;max-width:1200px;margin:0 auto}
 .fig{margin:0;width:100%}
 .fig-btn{all:unset;cursor:zoom-in;display:block;position:relative;width:100%}
